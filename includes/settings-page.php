@@ -38,7 +38,8 @@ function sample_my_account_get_settings()
                     'name' => __('Options', 'sample-my-account'),
                     'type' => 'textarea',
                     'desc' => __('Add options separated by a comma.', 'sample-my-account'),
-                    'id'   =>  get_user_meta($user_id, 'wc_sample_my_account_tab_options_' . $user_id, true)
+                    'id'   => 'wc_sample_my_account_tab_options_' . $user_id,
+                    'default' => get_user_meta($user_id, 'wc_sample_my_account_tab_options_' . $user_id, true)
                 ),
                 'section_end' => array(
                     'type' => 'sectionend',
@@ -57,7 +58,8 @@ function sample_my_account_get_settings()
                     'name' => __('Options', 'sample-my-account'),
                     'type' => 'textarea',
                     'desc' => __('Add options separated by a comma.', 'sample-my-account'),
-                    'id'   =>  get_user_meta($user_id, 'wc_sample_my_account_tab_options_' . $user_id, true)
+                    'id'   => 'wc_sample_my_account_tab_options_' . $user_id,
+    'default' => get_user_meta($user_id, 'wc_sample_my_account_tab_options_' . $user_id, true)
                 ),
                 'section_end' => array(
                     'type' => 'sectionend',
