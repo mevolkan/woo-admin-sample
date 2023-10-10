@@ -1,4 +1,8 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly
+}
+
 add_filter('woocommerce_settings_tabs_array', 'sample_my_acount_add_settings_tab', 50);
 function sample_my_acount_add_settings_tab($settings_tabs)
 {

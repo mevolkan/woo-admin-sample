@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Plugin Name:     Woo Admin Sample
  * Plugin URI:      PLUGIN SITE HERE
@@ -12,11 +13,40 @@
  * @package         Woo_Admin_Sample
  */
 
- // Plugin activation hook
-register_activation_hook(__FILE__, 'my_api_plugin_activate');
+ if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly
+}
 
-function my_api_plugin_activate() {
-    // Code to run when the plugin is activated
+// Plugin activation hook
+
+if (in_array('woocommerce/woocommerce.php', apply_filters('active_plugins', get_option('active_plugins')))) {
+    register_activation_hook(
+        __FILE__,
+        'my_api_plugin_activate'
+    );
+} else {
+    add_action('admin_notices', 'my_api_plugin_missing_woocommerce_notice');
+    register_deactivation_hook(
+        __FILE__,
+        'my_api_plugin_deactivate'
+    );
+}
+
+function my_api_plugin_activate()
+{
+    // Your activation code here
+}
+
+function my_api_plugin_deactivate()
+{
+    // Your activation code here
+}
+
+function my_api_plugin_missing_woocommerce_notice()
+{
+    echo '<div class="error"><p>';
+    echo 'This Plugin requires WooCommerce. Please install and activate WooCommerce to use this plugin.';
+    echo '</p></div>';
 }
 
 require_once(plugin_dir_path(__FILE__) . 'includes/settings-page.php');
