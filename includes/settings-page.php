@@ -1,6 +1,6 @@
 <?php
-if ( ! defined( 'ABSPATH' ) ) {
-	exit; // Exit if accessed directly
+if (!defined('ABSPATH')) {
+    exit; // Exit if accessed directly
 }
 
 add_filter('woocommerce_settings_tabs_array', 'sample_my_acount_add_settings_tab', 50);
@@ -19,7 +19,7 @@ function sample_my_account_tab()
 function sample_my_account_get_settings()
 {
     if (is_user_logged_in()) {
-        $current_user_id = get_current_user_id();
+  $user_id = get_current_user_id();
         if (current_user_can('administrator')) {
             $settings = array(
                 'section_title' => array(
@@ -38,7 +38,7 @@ function sample_my_account_get_settings()
                     'name' => __('Options', 'sample-my-account'),
                     'type' => 'textarea',
                     'desc' => __('Add options separated by a comma.', 'sample-my-account'),
-                    'id'   => 'wc_sample_my_account_tab_options'
+                    'id'   =>  get_user_meta($user_id, 'wc_sample_my_account_tab_options_' . $user_id, true)
                 ),
                 'section_end' => array(
                     'type' => 'sectionend',
@@ -53,12 +53,11 @@ function sample_my_account_get_settings()
                     'desc'     => '',
                     'id'       => 'wc_sample_my_account_tab_section_title'
                 ),
-
                 'options' => array(
                     'name' => __('Options', 'sample-my-account'),
                     'type' => 'textarea',
                     'desc' => __('Add options separated by a comma.', 'sample-my-account'),
-                    'id'   => 'wc_sample_my_account_tab_options'
+                    'id'   =>  get_user_meta($user_id, 'wc_sample_my_account_tab_options_' . $user_id, true)
                 ),
                 'section_end' => array(
                     'type' => 'sectionend',
@@ -75,3 +74,4 @@ function sample_my_account_update_settings()
 {
     woocommerce_update_options(sample_my_account_get_settings());
 }
+
