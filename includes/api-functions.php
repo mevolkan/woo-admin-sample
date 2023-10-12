@@ -40,10 +40,10 @@ function send_data_to_api($userId)
 
 
     if (!is_wp_error($response)) {
-        $responseBody = wp_remote_retrieve_headers($response);
-       
-        set_transient('woo_account_' . $userId, $responseBody, 10800); // Store for 3 hours (adjust the duration as needed)
-        return $responseBody;
+        $responseHeaders = wp_remote_retrieve_headers($response);
+       $retreivedHeaders = $responseHeaders->getAll();
+        set_transient('woo_account_' . $userId, $retreivedHeaders, 10800); // Store for 3 hours (adjust the duration as needed)
+        return $retreivedHeaders;
     }
     return $response;
 }
