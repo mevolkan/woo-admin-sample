@@ -3,15 +3,8 @@ if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly
 }
 
-function load_templates($user_id)
-{
-    // Code to load templates and display data
-}
+$userId = get_current_user_id();
 
-function check_data_expiry($user_id)
-{
-    // Code to check data expiry and update if necessary
-}
 
 function woo_admin_sample_add_dashboard_widgets()
 {
@@ -23,11 +16,9 @@ function woo_admin_sample_add_dashboard_widgets()
 }
 add_action('wp_dashboard_setup', 'woo_admin_sample_add_dashboard_widgets');
 
-/**
- * Create the function to output the content of our Dashboard Widget.
- */
-function woo_admin_sample_dashboard_widget_render()
+function woo_admin_sample_dashboard_widget_render($userId)
 {
-    // Display whatever you want to show.
-    esc_html_e("Howdy! I'm a great Dashboard Widget.", "woo_admin_sample");
+    $apiData =  fetch_data_from_transients($userId);
+   //$apiData = send_data_to_api($userId);
+    esc_html_e(print_r($apiData), "woo_admin_sample");
 }
