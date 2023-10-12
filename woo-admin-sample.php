@@ -2,10 +2,10 @@
 
 /**
  * Plugin Name:     Woo Admin Sample
- * Plugin URI:      PLUGIN SITE HERE
- * Description:     PLUGIN DESCRIPTION HERE
- * Author:          YOUR NAME HERE
- * Author URI:      YOUR SITE HERE
+ * Plugin URI:      https://github.com/mevolkan/woo-admin-sample
+ * Description:     This plugin fetches headers and displays the as a widget and in the My Account tab in woocommerce settings
+ * Author:          Samuel Nzaro
+ * Author URI:      https://github.com/mevolkan/
  * Text Domain:     woo-admin-sample
  * Domain Path:     /languages
  * Version:         0.1.0
@@ -48,9 +48,6 @@ function my_api_plugin_missing_woocommerce_notice()
     echo 'This Plugin requires WooCommerce. Please install and activate WooCommerce to use this plugin.';
     echo '</p></div>';
 }
-
-
-
 
 
 require_once(plugin_dir_path(__FILE__) . 'includes/settings-page.php');

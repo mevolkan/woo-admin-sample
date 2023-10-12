@@ -6,20 +6,7 @@ if(!function_exists('wp_get_current_user')) {
     include(ABSPATH . "wp-includes/pluggable.php"); 
 }
 
-
-
 require __DIR__ . '/api-functions.php';
-
-
-function render_custom_table() {
-    // Your table HTML goes here
-    echo '<table>';
-    echo '<tr><th>Header 1</th><th>Header 2</th></tr>';
-    echo '<tr><td>Data 1</td><td>Data 2</td></tr>';
-    // Add more rows as needed
-    echo '</table>';
-}
-
 
 function sample_my_acount_add_settings_tab($settings_tabs)
 {
