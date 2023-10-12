@@ -19,7 +19,7 @@ function sample_my_account_tab()
 function sample_my_account_get_settings()
 {
     if (is_user_logged_in()) {
-  $user_id = get_current_user_id();
+        $user_id = get_current_user_id();
         if (current_user_can('administrator')) {
             $settings = array(
                 'section_title' => array(
@@ -59,7 +59,7 @@ function sample_my_account_get_settings()
                     'type' => 'textarea',
                     'desc' => __('Add options separated by a comma.', 'sample-my-account'),
                     'id'   => 'wc_sample_my_account_tab_options_' . $user_id,
-    'default' => get_user_meta($user_id, 'wc_sample_my_account_tab_options_' . $user_id, true)
+                    'default' => get_user_meta($user_id, 'wc_sample_my_account_tab_options_' . $user_id, true)
                 ),
                 'section_end' => array(
                     'type' => 'sectionend',
@@ -76,4 +76,3 @@ function sample_my_account_update_settings()
 {
     woocommerce_update_options(sample_my_account_get_settings());
 }
-
