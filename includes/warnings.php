@@ -1,5 +1,6 @@
 <?php
 
+namespace Woo_Admin_Sample;
 /**
  * Class to log warnings.
  */
