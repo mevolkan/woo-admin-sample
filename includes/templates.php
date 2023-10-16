@@ -1,12 +1,10 @@
 <?php
-namespace Woo_Admin_Sample;
 
 if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly
 }
 
 $userId = get_current_user_id();
-
 
 function woo_admin_sample_add_dashboard_widgets()
 {
@@ -31,4 +29,3 @@ function woo_admin_sample_dashboard_widget_render()
 
     echo $output;
 }
-

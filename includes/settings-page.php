@@ -1,11 +1,11 @@
 <?php
-namespace Woo_Admin_Sample;
+
 
 if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly
 }
-if(!function_exists('wp_get_current_user')) {
-    include(ABSPATH . "wp-includes/pluggable.php"); 
+if (!function_exists('wp_get_current_user')) {
+    include(ABSPATH . "wp-includes/pluggable.php");
 }
 
 require __DIR__ . '/api-functions.php';
@@ -48,8 +48,8 @@ function sample_my_account_get_settings()
                     'id'   => 'wc_sample_my_account_tab_options_' . $userId,
                     'default' => get_user_meta($userId, 'wc_sample_my_account_tab_options_' . $userId, true),
                     'custom_attributes' => array(
-						'multiple' => 'multiple',
-					),
+                        'multiple' => 'multiple',
+                    ),
                 ),
                 'section_end' => array(
                     'type' => 'sectionend',
@@ -60,7 +60,7 @@ function sample_my_account_get_settings()
         $settings = array(
             'account_info' => array(
                 'type'     => 'title',
-                'desc'     => print_r( $account_data ),
+                'desc'     => print_r($account_data),
                 'id'       => 'wc_sample_my_account_tab_section_title'
             ),
             'section_title' => array(
@@ -94,5 +94,3 @@ function sample_my_account_update_settings()
 {
     woocommerce_update_options(sample_my_account_get_settings());
 }
-
-

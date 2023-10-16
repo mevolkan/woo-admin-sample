@@ -1,5 +1,5 @@
 <?php
-namespace Woo_Admin_Sample;
+
 
 if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly
@@ -21,7 +21,6 @@ function send_data_to_api($userId)
     if (empty($options)) {
         new AdminWarnings('Please add atleast one option');
     }
-
 
 
     $url = 'https://httpbin.org/post';

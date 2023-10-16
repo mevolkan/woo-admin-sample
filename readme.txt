@@ -1,5 +1,15 @@
-=== Woo Admin Sample ===
+=== Woo Admin Sample  ===
+Contributors: (this should be a list of wordpress.org userid's)
+Donate link: https://example.com/
+Tags: WooCommerce
+Requires at least: 6.0
+Tested up to: 6.3.2
+Stable tag: 6.0
+Requires PHP: 8.1.9
+License: GPLv2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
+=== Question brief ===
 
 Hi ! You’re requested to implement functionality to fetch a list of elements from an API, filtering from the currently logged in user preferences for that integration (think of it as if you needed to fetch tweets from specific Twitter users).
 
